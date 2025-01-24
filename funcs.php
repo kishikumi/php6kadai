@@ -10,30 +10,16 @@ function h($str)
 function db_conn()
 {
     try {
-        $db_name = 'php3kadai';    //データベース名
-        $db_id   = 'root';      //アカウント名
+        $db_name = '';    //データベース名
+        $db_id   = '';      //アカウント名
         $db_pw   = '';      //パスワード：XAMPPはパスワード無しに修正してください。
-        $db_host = 'localhost'; //DBホスト
+        $db_host = ''; //DBホスト
         $pdo = new PDO('mysql:dbname=' . $db_name . ';charset=utf8;host=' . $db_host, $db_id, $db_pw);
         return $pdo;
     } catch (PDOException $e) {
         exit('DB Connection Error:' . $e->getMessage());
     }
 }
-
-// function db_conn()
-// {
-//     try {
-//         $db_name = 'compassion8008_php3';    //データベース名
-//         $db_id   = 'compassion8008_php3';      //アカウント名
-//         $db_pw   = 'Fumika-84';      //パスワード：XAMPPはパスワード無しに修正してください。
-//         $db_host = 'mysql3104.db.sakura.ne.jp'; //DBホスト
-//         $pdo = new PDO('mysql:dbname=' . $db_name . ';charset=utf8;host=' . $db_host, $db_id, $db_pw);
-//         return $pdo;
-//     } catch (PDOException $e) {
-//         exit('DB Connection Error:' . $e->getMessage());
-//     }
-// }
 
 //SQLエラー
 function sql_error($stmt)
